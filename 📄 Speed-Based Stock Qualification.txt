@@ -1,0 +1,33 @@
+📄 Speed-Based Stock Qualification Cheat Sheet
+🧮 Formula
+Speed = [(Last Friday Close - Previous Friday Close) / Previous Friday Close] 
+        / (Number of trading days between them) * 252 * 100
+
+
+
+💡 Key Principles
+- Fixed Anchor: The most recent Friday Close is always used as the anchor for all calculations.
+- Previous Closes: Step backward one week at a time—Week 1 is 5 trading days ago, Week 2 is 10 days ago, and so on up to Week 10 (50 days ago).
+- Normalize Time: Always divide the return by the number of trading days between the closes (i.e. weeks back × 5).
+- Annualize: Multiply by 252 (average annual trading days).
+- Express as %: Multiply the final result by 100 and shift the decimal two places right to get a percentage.
+
+🧭 Qualification Criteria
+| Market Type | Threshold Speed (%) | 
+| Bull | ≥ 455 | 
+| Bear | ≥ 355 | 
+
+
+- A stock must meet or exceed the threshold on all 10 speed checks to be considered Fully Qualified.
+
+🔍 Step-by-Step Process
+- Extract Friday closing prices from your historical weekly data.
+- Anchor: Use the most recent Friday Close as the fixed anchor.
+- Calculate Speed for each of the previous 10 Fridays using:
+- Week 1 = 5 trading days prior
+- Week 2 = 10 trading days prior
+- …
+- Week 10 = 50 trading days prior
+- Apply the formula to each pair.
+- Check each speed against the appropriate market threshold (Bull or Bear).
+- If all 10 speeds qualify, the stock is considered Fully Qualified
